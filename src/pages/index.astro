@@ -1,34 +1,94 @@
----
-import Layout from '../layouts/Layout.astro';
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air Flow Experts Heating & Cooling</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f7f9fc; color: #333; }
+    header {
+      background: #eef3f9;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    header h1 { font-size: 3em; color: #1e90ff; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2em; color: #444; }
 
-<Layout title="Air Flow Experts Heating & Cooling">
+    nav {
+      background: #1e90ff;
+      padding: 12px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: background 0.3s ease;
+    }
+    nav a:hover {
+      background: #005bbb;
+      border-radius: 5px;
+    }
 
-  <!-- HERO SECTION -->
-  <section style="text-align: center; padding: 4rem 1rem;">
-    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Fast & Honest HVAC Service in Montebello, CA</h1>
-    <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-      Family-owned. 5-star rated. Same-day service available.<br />
-      Call <strong>(323) 541-2769</strong> or <a href="mailto:airflowexpertshvac@gmail.com">email us</a>
-    </p>
-    <a href="https://www.yelp.com/biz/airflow-experts-heating-and-cooling-montebello" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: #1e90ff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
-      ⭐ See Our Yelp Reviews
-    </a>
-  </section>
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    h2 { color: #1e90ff; margin-bottom: 20px; }
+    ul { list-style: none; padding: 0; line-height: 2; }
+    a.button {
+      background: #1e90ff;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
 
-  <!-- ABOUT SECTION -->
-  <section style="max-width: 800px; margin: auto; padding: 3rem 1rem;">
-    <h2 style="text-align: center; color: #1e90ff;">About Us</h2>
+  <header>
+    <h1>Air Flow Experts</h1>
+    <p>Los Angeles County’s Trusted HVAC Specialists</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
     <p>
-      Air Flow Experts Heating & Cooling is a trusted local HVAC company based in Montebello, CA. With over a decade of hands-on experience, we provide honest, fast, and professional service to both homes and businesses across Los Angeles County. 
-      We take pride in our reputation and believe in doing things right the first time—no hidden fees, no pushy sales tactics, just dependable service.
+      Air Flow Experts Heating & Cooling is a family-owned business proudly serving Los Angeles County.
+      We specialize in fast, honest HVAC service with no upsells or gimmicks—just real solutions.
+      We're fully licensed, highly rated, and ready to restore your comfort same-day.
+    </p>
+    <p>
+      Check out our reviews on
+      <a href="https://www.yelp.com/biz/airflow-experts-heating-and-cooling-montebello?uid=efuuCyC9T-qzEQGnHlUJXw&utm_source=ishare" target="_blank">Yelp</a>
+      and
+      <a href="https://www.thumbtack.com/ca/montebello/central-air-conditioning-repair/airflow-experts-heatingcooling/service/503015036460466188" target="_blank">Thumbtack</a>.
     </p>
   </section>
 
-  <!-- SERVICES SECTION -->
-  <section style="background-color: #f8f8f8; padding: 3rem 1rem;">
-    <h2 style="text-align: center; color: #1e90ff;">Our Services</h2>
-    <ul style="max-width: 700px; margin: auto; list-style: none; padding: 0; line-height: 2;">
+  <section id="services" style="background-color: #f8f8f8;">
+    <h2>Our Services</h2>
+    <ul>
       <li>✅ AC Installation & Repair</li>
       <li>✅ Heating/Furnace Repair</li>
       <li>✅ Mini-Split & Ductless Systems</li>
@@ -38,16 +98,14 @@ import Layout from '../layouts/Layout.astro';
     </ul>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section style="padding: 3rem 1rem; text-align: center;">
-    <h2 style="color: #1e90ff;">Contact Us</h2>
+  <section id="contact">
+    <h2>Contact Us</h2>
     <p><strong>Phone:</strong> (323) 541-2769</p>
     <p><strong>Email:</strong> airflowexpertshvac@gmail.com</p>
     <p><strong>Service Area:</strong> Montebello & all surrounding areas in LA County</p>
-    <a href="tel:13235412769" style="display: inline-block; margin-top: 15px; background: #1e90ff; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px;">Call Now</a>
+    <a class="button" href="tel:13235412769">Call Now</a>
 
-    <!-- BASIC CONTACT FORM -->
-    <form name="contact" method="POST" data-netlify="true" style="max-width: 600px; margin: 2rem auto 0; display: flex; flex-direction: column; gap: 1rem;">
+    <form name="contact" method="POST" data-netlify="true" style="margin-top: 30px; display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
       <input type="text" name="name" placeholder="Your Name" required style="padding: 12px;" />
       <input type="email" name="email" placeholder="Your Email" required style="padding: 12px;" />
       <textarea name="message" placeholder="Your Message" rows="5" required style="padding: 12px;"></textarea>
@@ -55,4 +113,5 @@ import Layout from '../layouts/Layout.astro';
     </form>
   </section>
 
-</Layout>
+</body>
+</html>
